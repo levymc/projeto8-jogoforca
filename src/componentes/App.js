@@ -15,7 +15,7 @@ export default function App() {
   const imgs = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
   const [erros, setErros] = useState(0);
   const [imagemForca, setImagemForca] = useState(imgs[erros]);
-  const [isBotaoDesabilitado, setBotaoDesabilitado] = useState(true);
+  const [botaoDesabilitado, setBotaoDesabilitado] = useState(true);
 
   let removerDisabled = () => {
     setBotaoDesabilitado(false);
@@ -34,8 +34,8 @@ export default function App() {
 
   return (
     <div className="container flex">
-      <Jogo image={imagemForca} errou={errou} />
-      <Letras disabled={isBotaoDesabilitado} funcDisabled={removerDisabled} />
+      <Jogo image={imagemForca} errou={errou} funcDisabled={removerDisabled} />
+      <Letras disabled={botaoDesabilitado} />
     </div>
   );
 }
