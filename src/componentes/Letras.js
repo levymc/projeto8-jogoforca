@@ -5,7 +5,7 @@ export default function Letras() {
     return (
       <div className="divLetras flex">
         {alfabeto.map((letra, index) => (
-          <div key={index} className="letra flex">{letra}</div>
+          <button key={index} disabled className="letra flex">{letra}</button>
         ))}
       </div>
     );

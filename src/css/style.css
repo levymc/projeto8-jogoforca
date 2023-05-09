@@ -47,6 +47,7 @@
 }
 
 .divBtn button{
+    cursor: pointer;
     padding: 1em;
     color: white;
     background: #27AE60;
@@ -67,8 +68,8 @@
     cursor: pointer;
     justify-content: center;
     align-items: center;
-    width: 3em;
-    height: 3em;
+    width: 3.75em;
+    height: 3.75em;
     /* padding: 1em; */
     background-color: white;
     border-radius: 5px;

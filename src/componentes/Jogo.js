@@ -5,7 +5,7 @@ export default function Jogo(props) {
         <div className="divJogo flex">
             <img src={props.image} alt="Imagem 0" />
             <div className="divBtn flex">
-                <button>Escolher Palavra</button>    
+                <button onClick={props.errou}>Escolher Palavra</button>    
             </div>
         </div>
         
