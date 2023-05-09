@@ -40,7 +40,7 @@ export default function App() {
 
   return (
     <div className="container flex">
-      <Jogo image={imagemForca} errou={errou} funcDisabled={removerDisabled} />
+      <Jogo image={imagemForca} errou={errou} funcDisabled={removerDisabled} underline={arrayUnderline} />
       <Letras disabled={botaoDesabilitado} />
     </div>
   );

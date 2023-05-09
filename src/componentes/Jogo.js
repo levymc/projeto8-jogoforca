@@ -13,8 +13,13 @@ export default function Jogo(props) {
             <div className="divBtn flex">
                 <button onClick={funcBtn}>Escolher Palavra</button>    
                 <div className="divPalavra flex">
-                    <div className="underline">_</div>
+                    {props.underline.map((_, index) => (
+                        <div className="underline" key={index}>
+                        {_}
+                        </div>
+                    ))}
                 </div>
+
             </div>
         </div>
         
