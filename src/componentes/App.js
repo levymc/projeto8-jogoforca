@@ -13,8 +13,10 @@ import forca6 from "../img/forca6.png"
 
 export default function App() {
 
-  const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)];
-  console.log(palavraAleatoria)
+  const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)]
+  const arrayPalavra = palavraAleatoria.split('')
+  const arrayUnderline = arrayPalavra.map(() => '_')
+  console.log(arrayPalavra, arrayUnderline)
 
   const imgs = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
   const [erros, setErros] = useState(0);
