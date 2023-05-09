@@ -13,10 +13,13 @@ import forca6 from "../img/forca6.png"
 export default function App() {
 
   const imgs = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
-
   const [erros, setErros] = useState(0);
   const [imagemForca, setImagemForca] = useState(imgs[erros]);
+  const [isBotaoDesabilitado, setBotaoDesabilitado] = useState(true);
 
+  let removerDisabled = () => {
+    setBotaoDesabilitado(false);
+  };
 
   let errou = () => {
     setErros(erros + 1);
@@ -29,14 +32,10 @@ export default function App() {
     console.log(erros)
   }
 
-  const handleChangeImagem = (novaImagem) => {
-    setImagemForca(novaImagem);
-  };
-
   return (
     <div className="container flex">
       <Jogo image={imagemForca} errou={errou} />
-      <Letras />
+      <Letras disabled={isBotaoDesabilitado} funcDisabled={removerDisabled} />
     </div>
   );
 }
