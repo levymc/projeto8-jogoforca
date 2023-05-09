@@ -46,6 +46,14 @@
     align-items: start;
 }
 
+.divBtn button{
+    padding: 1em;
+    color: white;
+    background: #27AE60;
+    border-radius: 8px;
+    border: 1px solid #27AE60; 
+}
+
 .divLetras{
     display: flex;
     flex-wrap: wrap;
