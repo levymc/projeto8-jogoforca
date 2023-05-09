@@ -1,22 +1,15 @@
+import Jogo from "./Jogo";
+
 
 function App() {
+  const forca0 = process.env.PUBLIC_URL + '/assets/forca0.png';
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container flex centerAll">
+      <Jogo />
     </div>
   );
 }
+
+
 
 export default App;

@@ -1,0 +1,46 @@
+
+
+/* Tudo */
+*{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    box-sizing: border-box !important;
+    user-select: none;
+}
+.flex{
+    display: flex;
+}
+.centerAll{
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Principal */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(238, 214, 185);
+}
+
+.divJogo{
+    height: 100%;
+    width: 100%;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+}
+
+.divJogo img{
+    width: 25em;
+    height: 29em;
+}
+
+.divBtn{
+    padding-top: 10em;
+    padding-left: 10em;
+    height: 100%;
+    /* width: 100%; */
+    justify-content: flex-start;
+    align-items: start;
+}
