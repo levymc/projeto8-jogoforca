@@ -20,8 +20,9 @@ export default function App() {
 
   let errou = () => {
     setErros(erros + 1);
-    if(erros == 6){
+    if(erros == 7){
       alert("Game Over !! ....")
+      setErros(0)
     }else{
       setImagemForca(imgs[erros]);
     }
