@@ -1,30 +1,14 @@
 
-let Forca = () => {
-    const forca0 = process.env.PUBLIC_URL + '/assets/forca0.png';
-
-    return (
-        <img src={forca0} alt="Imagem 0" />
-    );
-}
-
-let BtnJogar = () => {
-    return (
-        <button>Escolher Palavra</button>
-    )
-}
-
-export default function Jogo() {
+export default function Jogo(props) {
     return (
       <>
         <div className="divJogo flex">
-            <Forca />  
-            <div className="divBtn flex"><BtnJogar /> </div>
+            <img src={props.image} alt="Imagem 0" />
+            <div className="divBtn flex">
+                <button>Escolher Palavra</button>    
+            </div>
         </div>
         
       </>
     );
 }
-  
-
-
-  
