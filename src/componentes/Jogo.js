@@ -1,9 +1,12 @@
 
 export default function Jogo(props) {
 
+    
+
     let funcBtn = () => {
         props.funcDisabled();
         props.errou();
+        props.funcRemoveSelecionado();
     }
 
     return (

@@ -26,11 +26,15 @@ export default function App() {
   const [erros, setErros] = useState(0);
   const [imagemForca, setImagemForca] = useState(imgs[erros]);
   const [botaoDesabilitado, setBotaoDesabilitado] = useState(true);
+  const [classeSelecionado, setClasseSelecionado] = useState("selecionado");
 
   let removerDisabled = () => {
     setBotaoDesabilitado(false);
   };
 
+  let removerSelecinado = () => {
+    setClasseSelecionado("");
+  };
   
 
   let errou = () => {
@@ -46,8 +50,15 @@ export default function App() {
 
   return (
     <div className="container flex">
-      <Jogo image={imagemForca} errou={errou} funcDisabled={removerDisabled} underline={arrayUnderline} />
-      <Letras disabled={botaoDesabilitado} />
+      <Jogo image={imagemForca} 
+            errou={errou} 
+            funcDisabled={removerDisabled} 
+            underline={arrayUnderline} 
+            funcRemoveSelecionado={removerSelecinado} 
+            />
+      <Letras disabled={botaoDesabilitado} 
+              classeSelecionado={classeSelecionado}
+      />
     </div>
   );
 }

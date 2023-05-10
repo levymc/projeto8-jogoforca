@@ -80,7 +80,11 @@
     width: 3.75em;
     height: 3.75em;
     /* padding: 1em; */
-    background-color: white;
+    background: #E1ECF4;
+    color: #39739D;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 1px solid #7AA7C7;
+}
+.selecionado{
+    background-color: #798A9F;
 }
