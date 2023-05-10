@@ -18,7 +18,7 @@ export default function Jogo(props) {
                         {_}
                         </div>
                     ))}
-                </div>
+                    </div>
 
             </div>
         </div>

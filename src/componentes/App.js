@@ -13,7 +13,11 @@ import forca6 from "../img/forca6.png"
 
 export default function App() {
 
-  const palavraAleatoria = palavras[Math.floor(Math.random() * palavras.length)]
+  let embaralhar = () => {
+    return palavras[Math.floor(Math.random() * palavras.length)]
+  }
+
+  const [palavraAleatoria, setPalavra] = useState(embaralhar);
   const arrayPalavra = palavraAleatoria.split('')
   const arrayUnderline = arrayPalavra.map(() => '_')
   console.log(arrayPalavra, arrayUnderline)
@@ -26,6 +30,8 @@ export default function App() {
   let removerDisabled = () => {
     setBotaoDesabilitado(false);
   };
+
+  
 
   let errou = () => {
     setErros(erros + 1);
