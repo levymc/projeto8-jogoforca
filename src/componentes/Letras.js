@@ -5,7 +5,7 @@ export default function Letras(props) {
     return (
       <div className="divLetras flex">
         {alfabeto.map((letra, index) => (
-          <button key={index} disabled={props.disabled} className="letra flex">{letra}</button>
+          <button key={index} disabled={props.disabled} data-test="letter" className="letra flex">{letra}</button>
         ))}
       </div>
     );
