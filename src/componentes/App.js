@@ -20,7 +20,6 @@ export default function App() {
   const [palavraAleatoria, setPalavra] = useState(embaralhar);
   const arrayPalavra = palavraAleatoria.split('')
   const arrayUnderline = arrayPalavra.map(() => '_')
-  console.log(arrayPalavra, arrayUnderline)
 
   const imgs = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
   const [erros, setErros] = useState(0);
@@ -39,7 +38,7 @@ export default function App() {
 
   let errou = () => {
     setErros(erros + 1);
-    if(erros == 7){
+    if(erros === 7){
       alert("Game Over !! ....")
       setErros(0)
     }else{
@@ -58,6 +57,7 @@ export default function App() {
             />
       <Letras disabled={botaoDesabilitado} 
               classeSelecionado={classeSelecionado}
+              funcDisabled={removerDisabled}
       />
     </div>
   );
