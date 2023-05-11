@@ -3,14 +3,11 @@ import { useState } from "react";
 export default function Jogo(props) {
     let [jogoIniciado, setJogoIniciado] = useState(false)
     
-    let [btnClicado, setBtnClicado] = useState(false);
-
     let funcBtn = () => {
-        if (btnClicado === false){
+        if (jogoIniciado === false){
             props.funcDisabled();
             props.funcRemoveSelecionado();
             setJogoIniciado(true)
-            setBtnClicado(true)
         }
     }
 
