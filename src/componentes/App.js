@@ -25,7 +25,7 @@ export default function App() {
   const [erros, setErros] = useState(0);
   const [imagemForca, setImagemForca] = useState(imgs[erros]);
   const [botaoDesabilitado, setBotaoDesabilitado] = useState(true);
-  const [classeSelecionado, setClasseSelecionado] = useState("selecionado");
+  const [classeSelecionado, setClasseSelecionado] = useState(true);
 
   let removerDisabled = () => {
     setBotaoDesabilitado(false);
@@ -35,9 +35,16 @@ export default function App() {
     setClasseSelecionado("");
   };
 
-  let addSelecinado = () => {
-    setClasseSelecionado("selecionado");
+  let funcSelecionar = () => {
+    setClasseSelecionado(!classeSelecionado);
   };
+
+  const [alfabeto] = useState(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
+
+  const [estadosBotoes, setEstadosBotoes] = useState(alfabeto.map((letra, index) => ({
+    disabled: true,
+    selecionado: true
+  })));
   
 
   let errou = () => {
@@ -59,9 +66,11 @@ export default function App() {
             funcRemoveSelecionado={removerSelecinado} 
             />
       <Letras disabled={botaoDesabilitado} 
+              alfabeto = {alfabeto}
+              estadosBotoes = {estadosBotoes}
               classeSelecionado={classeSelecionado}
+              funcSelecionar = {funcSelecionar}
               errou={errou} 
-              addSelecinado={addSelecinado}
       />
     </div>
   );
