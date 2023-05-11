@@ -17,7 +17,7 @@ export default function App() {
     return palavras[Math.floor(Math.random() * palavras.length)]
   }
 
-  const [palavraAleatoria, setPalavra] = useState(embaralhar);
+  const [palavraAleatoria] = useState(embaralhar);
   const arrayPalavra = palavraAleatoria.split('')
   const arrayUnderline = arrayPalavra.map(() => '_')
 

@@ -21,7 +21,6 @@ export default function Letras(props) {
       };
       return novosEstados;
     });
-    console.log("oii");
   };
 
   return (
