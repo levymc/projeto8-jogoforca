@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import palavras from "../palavras"
 import Jogo from "./Jogo";
 import Letras from "./Letras";
@@ -25,22 +25,25 @@ export default function App() {
   const [erros, setErros] = useState(0);
   const [imagemForca, setImagemForca] = useState(imgs[erros]);
   const [botaoDesabilitado, setBotaoDesabilitado] = useState(true);
-  const [classeSelecionado, setClasseSelecionado] = useState(true);
+
+  const [alfabeto] = useState(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
+  const [estadosBotoes, setEstadosBotoes] = useState(alfabeto.map((letra, index) => ({
+    disabled: true,
+    selecionado: true
+  })));
 
   let removerDisabled = () => {
     setBotaoDesabilitado(false);
   };
 
-  let removerSelecinado = () => {
-    setClasseSelecionado("");
-  };
-
   let funcSelecionar = (index) => {
+    console.log(index, "aqui!")
     setEstadosBotoes((prevEstados) => {
       const novosEstados = [...prevEstados];
       novosEstados[index] = {
         ...novosEstados[index],
-        selecionado: !novosEstados[index].selecionado
+        selecionado: true,
+        disabled: true
       };
       return novosEstados;
     });
@@ -57,12 +60,7 @@ export default function App() {
   };
   
 
-  const [alfabeto] = useState(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
-
-  const [estadosBotoes, setEstadosBotoes] = useState(alfabeto.map((letra, index) => ({
-    disabled: true,
-    selecionado: true
-  })));
+  
   
 
   let errou = () => {

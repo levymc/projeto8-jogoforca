@@ -1,8 +1,8 @@
 export default function Letras(props) {
 
   const btnLetra = (index) => {
-    console.log(props.classeSelecionado)
-    // props.funcSelecionar();
+    console.log("IOioas")
+    props.funcSelecionar(index);
     props.errou();
    
   };
