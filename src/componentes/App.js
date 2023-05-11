@@ -32,10 +32,6 @@ export default function App() {
     selecionado: true
   })));
 
-  let removerDisabled = () => {
-    setBotaoDesabilitado(false);
-  };
-
   let funcSelecionar = (index) => {
     console.log(index, "aqui!")
     setEstadosBotoes((prevEstados) => {
@@ -58,10 +54,6 @@ export default function App() {
       return novosEstados;
     });
   };
-  
-
-  
-  
 
   let errou = () => {
     setErros(erros + 1);
@@ -77,7 +69,7 @@ export default function App() {
   return (
     <div className="container flex">
       <Jogo image={imagemForca} 
-            funcDisabled={removerDisabled} 
+            funcDisabled={() => {setBotaoDesabilitado(false)}} 
             underline={arrayUnderline} 
             funcSelecionarTodos={funcSelecionarTodos} 
             />
