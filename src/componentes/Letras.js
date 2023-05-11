@@ -1,7 +1,4 @@
-import { useState } from "react";
-
 export default function Letras(props) {
-  
 
   const btnLetra = (index) => {
     console.log(props.classeSelecionado)
@@ -9,18 +6,6 @@ export default function Letras(props) {
     props.errou();
    
   };
-
-  // console.log(props.classeSelecionado)
-  // setEstadosBotoes(prevEstados => {
-  //   const novosEstados = [...prevEstados];
-  //   novosEstados[index] = {
-  //     ...prevEstados[index],
-  //     disabled: true,
-  //     selecionado: props.classeSelecionado
-  //   };
-  //   return novosEstados;
-  // });
-
 
   return (
     <div className="divLetras flex">

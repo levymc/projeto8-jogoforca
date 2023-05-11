@@ -6,7 +6,7 @@ export default function Jogo(props) {
     let funcBtn = () => {
         if (jogoIniciado === false){
             props.funcDisabled();
-            props.funcRemoveSelecionado();
+            props.funcSelecionarTodos();
             setJogoIniciado(true)
         }
     }

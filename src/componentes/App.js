@@ -35,9 +35,27 @@ export default function App() {
     setClasseSelecionado("");
   };
 
-  let funcSelecionar = () => {
-    setClasseSelecionado(!classeSelecionado);
+  let funcSelecionar = (index) => {
+    setEstadosBotoes((prevEstados) => {
+      const novosEstados = [...prevEstados];
+      novosEstados[index] = {
+        ...novosEstados[index],
+        selecionado: !novosEstados[index].selecionado
+      };
+      return novosEstados;
+    });
   };
+
+  let funcSelecionarTodos = () => {
+    setEstadosBotoes((prevEstados) => {
+      const novosEstados = prevEstados.map((estado) => ({
+        ...estado,
+        selecionado: !estado.selecionado
+      }));
+      return novosEstados;
+    });
+  };
+  
 
   const [alfabeto] = useState(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
 
@@ -63,12 +81,11 @@ export default function App() {
       <Jogo image={imagemForca} 
             funcDisabled={removerDisabled} 
             underline={arrayUnderline} 
-            funcRemoveSelecionado={removerSelecinado} 
+            funcSelecionarTodos={funcSelecionarTodos} 
             />
       <Letras disabled={botaoDesabilitado} 
               alfabeto = {alfabeto}
               estadosBotoes = {estadosBotoes}
-              classeSelecionado={classeSelecionado}
               funcSelecionar = {funcSelecionar}
               errou={errou} 
       />
