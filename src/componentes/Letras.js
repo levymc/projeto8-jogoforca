@@ -10,7 +10,8 @@ export default function Letras(props) {
 
   const btnLetra = (index) => {
     console.log(props.classeSelecionado)
-    props.addSelecinado()
+    props.addSelecinado();
+    props.errou();
     console.log(props.classeSelecionado)
     setEstadosBotoes(prevEstados => {
       const novosEstados = [...prevEstados];

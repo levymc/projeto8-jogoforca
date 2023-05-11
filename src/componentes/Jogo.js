@@ -2,12 +2,16 @@ import { useState } from "react";
 
 export default function Jogo(props) {
     let [jogoIniciado, setJogoIniciado] = useState(false)
+    
+    let [btnClicado, setBtnClicado] = useState(false);
 
     let funcBtn = () => {
-        props.funcDisabled();
-        props.errou();
-        props.funcRemoveSelecionado();
-        setJogoIniciado(true)
+        if (btnClicado === false){
+            props.funcDisabled();
+            props.funcRemoveSelecionado();
+            setJogoIniciado(true)
+            setBtnClicado(true)
+        }
     }
 
     return (
@@ -19,7 +23,7 @@ export default function Jogo(props) {
                 <div data-test="word" className="divPalavra flex">
                     {jogoIniciado && props.underline.map((_, index) => (
                         <div className="underline" key={index}>
-                        {_}
+                            {_}
                         </div>
                     ))}
                     </div>
