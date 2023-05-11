@@ -34,6 +34,10 @@ export default function App() {
   let removerSelecinado = () => {
     setClasseSelecionado("");
   };
+
+  let addSelecinado = () => {
+    setClasseSelecionado("selecionado");
+  };
   
 
   let errou = () => {
@@ -57,7 +61,7 @@ export default function App() {
             />
       <Letras disabled={botaoDesabilitado} 
               classeSelecionado={classeSelecionado}
-              funcDisabled={removerDisabled}
+              addSelecinado={addSelecinado}
       />
     </div>
   );

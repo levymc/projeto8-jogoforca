@@ -5,16 +5,19 @@ export default function Letras(props) {
 
   const [estadosBotoes, setEstadosBotoes] = useState(alfabeto.map(() => ({
     disabled: false,
-    selecionado: true
+    selecionado: props.classeSelecionado
   })));
 
   const btnLetra = (index) => {
+    console.log(props.classeSelecionado)
+    props.addSelecinado()
+    console.log(props.classeSelecionado)
     setEstadosBotoes(prevEstados => {
       const novosEstados = [...prevEstados];
       novosEstados[index] = {
         ...prevEstados[index],
         disabled: true,
-        selecionado: true
+        selecionado: props.classeSelecionado
       };
       return novosEstados;
     });
@@ -29,7 +32,7 @@ export default function Letras(props) {
           disabled={estadosBotoes[index].disabled}
           onClick={() => btnLetra(index)}
           data-test="letter"
-          className={`letra flex ${props.classeSelecionado ? 'selecionado' : ''}`}
+          className={`letra flex ${props.classeSelecionado}`}
         >
           {letra}
         </button>
