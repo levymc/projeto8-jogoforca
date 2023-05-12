@@ -1,6 +1,8 @@
 export default function Letras(props) {
 
   const btnLetra = (letra, index) => {
+    
+    let ganhou = false;
     props.funcSelecionar(index);
     props.errou();
     console.log(letra);
@@ -13,12 +15,16 @@ export default function Letras(props) {
         return under;
       }
     });
-  
+
+    
     props.setArrayUnderline(newArray);
   };
   
   
-
+  if(!props.arrayUnderline.includes("_")){
+    alert("Ganhou!")
+  }
+  
   return (
     <div className="divLetras flex">
       {props.alfabeto.map((letra, index) => (
