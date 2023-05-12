@@ -1,9 +1,9 @@
 export default function Letras(props) {
 
-  const btnLetra = (index) => {
-    console.log("IOioas")
+  const btnLetra = (letra, index) => {
     props.funcSelecionar(index);
     props.errou();
+    console.log(letra)
   };
 
   return (
@@ -12,7 +12,7 @@ export default function Letras(props) {
         <button
           key={index}
           disabled={props.estadosBotoes[index].disabled}
-          onClick={() => {btnLetra(index)}}
+          onClick={() => {btnLetra(letra, index)}}
           data-test="letter"
           className={`letra flex ${props.estadosBotoes[index].selecionado ? "selecionado" : ""}`}
         >

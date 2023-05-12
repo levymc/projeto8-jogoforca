@@ -34,7 +34,6 @@ export default function App() {
   })));
 
   let funcSelecionar = (index) => {
-    console.log(index, "aqui!")
     setEstadosBotoes((prevEstados) => {
       const novosEstados = [...prevEstados];
       novosEstados[index] = {
@@ -75,6 +74,7 @@ export default function App() {
       <Jogo image={imagemForca} 
             funcDisabled={() => {setBotaoDesabilitado(false)}} 
             underline={arrayUnderline} 
+            arrayPalavra = {arrayPalavra}
             funcSelecionarTodos={funcSelecionarTodos} 
             />
             <h2 class="over" >{gameOver && "GAME OVER!!!"}</h2>
