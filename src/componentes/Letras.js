@@ -4,7 +4,6 @@ export default function Letras(props) {
     console.log("IOioas")
     props.funcSelecionar(index);
     props.errou();
-   
   };
 
   return (
