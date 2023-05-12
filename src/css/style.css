@@ -88,3 +88,10 @@
 .selecionado{
     background-color: #798A9F;
 }
+.over{
+    position: absolute;
+    color: red;
+    font-size: 100px;
+    font-weight: bold;
+    top: 40%;
+}

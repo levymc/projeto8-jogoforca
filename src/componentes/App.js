@@ -25,6 +25,7 @@ export default function App() {
   const [erros, setErros] = useState(0);
   const [imagemForca, setImagemForca] = useState(imgs[erros]);
   const [botaoDesabilitado, setBotaoDesabilitado] = useState(true);
+  const [gameOver, setGameOver] = useState(false)
 
   const [alfabeto] = useState(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
   const [estadosBotoes, setEstadosBotoes] = useState(alfabeto.map((letra, index) => ({
@@ -61,7 +62,8 @@ export default function App() {
     if (erros === 5) {
       setErros(0);
       setImagemForca(forca6);
-      alert("Game Over !! ....");
+      // alert("Game Over !! ....");
+      setGameOver(true)
     } else {
       setImagemForca(imgs[erros + 1]);
     }
@@ -75,6 +77,7 @@ export default function App() {
             underline={arrayUnderline} 
             funcSelecionarTodos={funcSelecionarTodos} 
             />
+            <h2 class="over" >{gameOver && "GAME OVER!!!"}</h2>
       <Letras disabled={botaoDesabilitado} 
               alfabeto = {alfabeto}
               estadosBotoes = {estadosBotoes}
