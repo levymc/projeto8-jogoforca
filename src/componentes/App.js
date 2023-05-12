@@ -49,7 +49,8 @@ export default function App() {
     setEstadosBotoes((prevEstados) => {
       const novosEstados = prevEstados.map((estado) => ({
         ...estado,
-        selecionado: !estado.selecionado
+        selecionado: !estado.selecionado,
+        disabled: !estado.disabled
       }));
       return novosEstados;
     });
@@ -57,15 +58,16 @@ export default function App() {
 
   let errou = () => {
     setErros(erros + 1);
-    if(erros === 7){
-      alert("Game Over !! ....")
-      setErros(0)
-    }else{
-      setImagemForca(imgs[erros]);
+    if (erros === 5) {
+      setErros(0);
+      setImagemForca(forca6);
+      alert("Game Over !! ....");
+    } else {
+      setImagemForca(imgs[erros + 1]);
     }
-    console.log(erros)
-  }
-
+    console.log(erros);
+  };
+  
   return (
     <div className="container flex">
       <Jogo image={imagemForca} 

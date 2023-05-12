@@ -12,7 +12,7 @@ export default function Letras(props) {
         <button
           key={index}
           disabled={props.estadosBotoes[index].disabled}
-          onClick={() => btnLetra(index)}
+          onClick={() => {btnLetra(index)}}
           data-test="letter"
           className={`letra flex ${props.estadosBotoes[index].selecionado ? "selecionado" : ""}`}
         >
