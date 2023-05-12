@@ -6,10 +6,17 @@ export default function Letras(props) {
     console.log(letra);
     console.log(props.arrayPalavra);
   
-    const newArray = props.arrayUnderline.map((under, i) => props.arrayPalavra.includes(letra) ? "X" : under);
+    const newArray = props.arrayUnderline.map((under, i) => {
+      if (i === index && props.arrayPalavra.includes(letra)) {
+        return `${letra}`;
+      } else {
+        return under;
+      }
+    });
   
     props.setArrayUnderline(newArray);
   };
+  
 
   return (
     <div className="divLetras flex">
