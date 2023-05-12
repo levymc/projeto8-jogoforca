@@ -19,7 +19,7 @@ export default function App() {
 
   const [palavraAleatoria] = useState(embaralhar);
   const arrayPalavra = palavraAleatoria.split('')
-  const arrayUnderline = arrayPalavra.map(() => '_')
+  const [arrayUnderline, setArrayUnderline] = useState(arrayPalavra.map(() => '_'))
 
   const imgs = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
   const [erros, setErros] = useState(0);
@@ -28,6 +28,8 @@ export default function App() {
   const [gameOver, setGameOver] = useState(false)
 
   const [alfabeto] = useState(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
+  const alfabetoMinusculo = alfabeto.map(letra => letra.toLowerCase());
+
   const [estadosBotoes, setEstadosBotoes] = useState(alfabeto.map((letra, index) => ({
     disabled: true,
     selecionado: true
@@ -77,12 +79,15 @@ export default function App() {
             arrayPalavra = {arrayPalavra}
             funcSelecionarTodos={funcSelecionarTodos} 
             />
-            <h2 class="over" >{gameOver && "GAME OVER!!!"}</h2>
+            <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
       <Letras disabled={botaoDesabilitado} 
-              alfabeto = {alfabeto}
+              alfabeto = {alfabetoMinusculo}
               estadosBotoes = {estadosBotoes}
               funcSelecionar = {funcSelecionar}
               errou={errou} 
+              arrayUnderline = {arrayUnderline}
+              setArrayUnderline={setArrayUnderline} 
+              arrayPalavra = {arrayPalavra}
       />
     </div>
   );
