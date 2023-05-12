@@ -7,7 +7,7 @@ export default function Letras(props) {
     console.log(props.arrayPalavra);
   
     const newArray = props.arrayUnderline.map((under, i) => {
-      if (i === index && props.arrayPalavra.includes(letra)) {
+      if (props.arrayPalavra[i] === letra) {
         return `${letra}`;
       } else {
         return under;
@@ -16,6 +16,7 @@ export default function Letras(props) {
   
     props.setArrayUnderline(newArray);
   };
+  
   
 
   return (
