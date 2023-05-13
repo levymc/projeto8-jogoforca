@@ -17,7 +17,7 @@ export default function App() {
     return palavras[Math.floor(Math.random() * palavras.length)]
   }
 
-  const [palavraAleatoria] = useState(embaralhar);
+  const [palavraAleatoria, setPalavraAleatoria] = useState(embaralhar);
   const arrayPalavra = palavraAleatoria.split('')
   const [arrayUnderline, setArrayUnderline] = useState(arrayPalavra.map(() => '_'))
 
@@ -78,6 +78,11 @@ export default function App() {
             underline={arrayUnderline} 
             arrayPalavra = {arrayPalavra}
             funcSelecionarTodos={funcSelecionarTodos} 
+
+            setPalavraAleatoria = {setPalavraAleatoria}
+            setErros = {setErros}
+            setEstadosBotoes = {setEstadosBotoes}
+
             />
             <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
       <Letras disabled={botaoDesabilitado} 
