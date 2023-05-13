@@ -8,6 +8,7 @@ export default function Jogo(props) {
             props.funcDisabled();
             props.funcSelecionarTodos();
             setJogoIniciado(true)
+            props.setMsgVenceu(false)
         }
     }
 

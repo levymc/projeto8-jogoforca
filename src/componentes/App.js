@@ -96,6 +96,7 @@ export default function App() {
             setErros = {setErros}
             setEstadosBotoes = {setEstadosBotoes}
             venceu = {venceu}
+            setMsgVenceu = {setMsgVenceu}
             />
             <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
             <h2 className="overVenceu" >{msgVenceu && "Venceu!!!!"}</h2>
