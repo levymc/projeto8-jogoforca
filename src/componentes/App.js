@@ -93,10 +93,13 @@ export default function App() {
             arrayPalavra = {arrayPalavra}
             funcSelecionarTodos={funcSelecionarTodos} 
             setPalavraAleatoria = {setPalavraAleatoria}
+            palavraAleatoria = {palavraAleatoria}
+            setArrayUnderline = {setArrayUnderline}
             setErros = {setErros}
             setEstadosBotoes = {setEstadosBotoes}
             venceu = {venceu}
             setMsgVenceu = {setMsgVenceu}
+            embaralhar = {embaralhar}
             />
             <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
             <h2 className="overVenceu" >{msgVenceu && "Venceu!!!!"}</h2>

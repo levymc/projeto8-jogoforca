@@ -8,7 +8,13 @@ export default function Jogo(props) {
             props.funcDisabled();
             props.funcSelecionarTodos();
             setJogoIniciado(true)
-            props.setMsgVenceu(false)
+            if (props.venceu){
+                props.setMsgVenceu(false)
+                props.setPalavraAleatoria(props.embaralhar())
+                const arrayPalavra = props.palavraAleatoria.split('')
+                props.setArrayUnderline([])
+                props.setArrayUnderline(arrayPalavra.map(() => '_'))
+            }
         }
     }
 
