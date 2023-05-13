@@ -4,7 +4,7 @@ export default function Jogo(props) {
     let [jogoIniciado, setJogoIniciado] = useState(false)
     
     let funcBtn = () => {
-        if (jogoIniciado === false){
+        if (jogoIniciado === false || props.venceu){
             props.funcDisabled();
             props.funcSelecionarTodos();
             setJogoIniciado(true)

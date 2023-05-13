@@ -35,6 +35,8 @@ export default function App() {
     selecionado: true
   })));
 
+  const [venceu, setVenceu] = useState(false)
+
   let funcSelecionar = (index) => {
     setEstadosBotoes((prevEstados) => {
       const novosEstados = [...prevEstados];
@@ -92,7 +94,7 @@ export default function App() {
             setPalavraAleatoria = {setPalavraAleatoria}
             setErros = {setErros}
             setEstadosBotoes = {setEstadosBotoes}
-
+            venceu = {venceu}
             />
             <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
       <Letras disabled={botaoDesabilitado} 
@@ -102,9 +104,13 @@ export default function App() {
               setEstadosBotoes = {setEstadosBotoes}
               desabilitarTodos = {desabilitarTodos}
               errou={errou} 
+              setErros = {setErros}
               arrayUnderline = {arrayUnderline}
               setArrayUnderline={setArrayUnderline} 
               arrayPalavra = {arrayPalavra}
+              setVenceu = {setVenceu}
+              setImagemForca = {setImagemForca}
+              img0 = {imgs[0]}
       />
     </div>
   );
