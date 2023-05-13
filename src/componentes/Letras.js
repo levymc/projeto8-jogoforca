@@ -1,16 +1,14 @@
 export default function Letras(props) {
-
   const btnLetra = (letra, index) => {
-    let ganhou = false;
     props.funcSelecionar(index);
-  
+
     console.log(letra);
     console.log(props.arrayPalavra);
-  
+
     if (!props.arrayPalavra.includes(letra)) {
       props.errou();
     }
-  
+
     const newArray = props.arrayUnderline.map((under, i) => {
       if (props.arrayPalavra[i] === letra) {
         return `${letra}`;
@@ -18,25 +16,27 @@ export default function Letras(props) {
         return under;
       }
     });
-  
+
     props.setArrayUnderline(newArray);
+
+    if (newArray.indexOf('_') === -1) {
+      props.desabilitarTodos();
+    }
   };
-  
-  
-  
-  if(!props.arrayUnderline.includes("_")){
-    alert("Ganhou!")
-  }
-  
+
   return (
     <div className="divLetras flex">
       {props.alfabeto.map((letra, index) => (
         <button
           key={index}
           disabled={props.estadosBotoes[index].disabled}
-          onClick={() => {btnLetra(letra, index)}}
+          onClick={() => {
+            btnLetra(letra, index);
+          }}
           data-test="letter"
-          className={`letra flex ${props.estadosBotoes[index].selecionado ? "selecionado" : ""}`}
+          className={`letra flex ${
+            props.estadosBotoes[index].selecionado ? "selecionado" : ""
+          }`}
         >
           {letra}
         </button>

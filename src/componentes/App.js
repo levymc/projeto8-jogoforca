@@ -58,6 +58,17 @@ export default function App() {
     });
   };
 
+  let desabilitarTodos = () => {
+    setEstadosBotoes((prevEstados) => {
+      const novosEstados = prevEstados.map((estado) => ({
+        ...estado,
+        selecionado: true,
+        disabled: true
+      }));
+      return novosEstados;
+    });
+  };
+
   let errou = () => {
     setErros(erros + 1);
     if (erros === 5) {
@@ -78,7 +89,6 @@ export default function App() {
             underline={arrayUnderline} 
             arrayPalavra = {arrayPalavra}
             funcSelecionarTodos={funcSelecionarTodos} 
-
             setPalavraAleatoria = {setPalavraAleatoria}
             setErros = {setErros}
             setEstadosBotoes = {setEstadosBotoes}
@@ -89,6 +99,8 @@ export default function App() {
               alfabeto = {alfabetoMinusculo}
               estadosBotoes = {estadosBotoes}
               funcSelecionar = {funcSelecionar}
+              setEstadosBotoes = {setEstadosBotoes}
+              desabilitarTodos = {desabilitarTodos}
               errou={errou} 
               arrayUnderline = {arrayUnderline}
               setArrayUnderline={setArrayUnderline} 
