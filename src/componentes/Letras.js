@@ -24,6 +24,7 @@ export default function Letras(props) {
       props.setVenceu(true)
       props.setErros(0)
       props.setImagemForca(props.img0)
+      props.setMsgVenceu(true)
     }
   };
 

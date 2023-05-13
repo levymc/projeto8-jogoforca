@@ -14,7 +14,7 @@ export default function Jogo(props) {
     return (
       <>
         <div className="divJogo flex">
-            <img className="imagemForca" key={props.image} src={props.image} data-test="game-image" alt="Image" />
+            <img className="imagemForca" key={props.image} src={props.image} data-test="game-image" alt="Imagem da Forca" />
             <div className="divBtn flex">
                 <button onClick={funcBtn} data-test="choose-word" >Escolher Palavra</button>    
                 <div data-test="word" className="divPalavra flex">

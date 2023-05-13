@@ -26,6 +26,7 @@ export default function App() {
   const [imagemForca, setImagemForca] = useState(imgs[erros]);
   const [botaoDesabilitado, setBotaoDesabilitado] = useState(true);
   const [gameOver, setGameOver] = useState(false)
+  const [msgVenceu, setMsgVenceu] = useState(false)
 
   const [alfabeto] = useState(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']);
   const alfabetoMinusculo = alfabeto.map(letra => letra.toLowerCase());
@@ -97,6 +98,7 @@ export default function App() {
             venceu = {venceu}
             />
             <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
+            <h2 className="overVenceu" >{msgVenceu && "Venceu!!!!"}</h2>
       <Letras disabled={botaoDesabilitado} 
               alfabeto = {alfabetoMinusculo}
               estadosBotoes = {estadosBotoes}
@@ -109,6 +111,7 @@ export default function App() {
               setArrayUnderline={setArrayUnderline} 
               arrayPalavra = {arrayPalavra}
               setVenceu = {setVenceu}
+              setMsgVenceu = {setMsgVenceu}
               setImagemForca = {setImagemForca}
               img0 = {imgs[0]}
       />
