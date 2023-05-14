@@ -102,3 +102,9 @@
     font-weight: bold;
     top: 40%;
 }
+.chute{
+    padding-top: 1.5em;
+    padding-bottom: 2em;
+    width: 100%;
+    justify-content: space-evenly;
+}

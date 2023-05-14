@@ -1,8 +1,7 @@
 export default function Letras(props) {
   const btnLetra = (letra, index) => {
     props.funcSelecionar(index);
-
-    console.log(letra);
+    console.log(props.estadosBotoes[index].disabled)
     console.log(props.arrayPalavra);
 
     if (!props.arrayPalavra.includes(letra)) {
@@ -45,6 +44,11 @@ export default function Letras(props) {
           {letra}
         </button>
       ))}
+      <div className="chute flex">
+        <label for="chute" >Já sei a palavra!</label>
+        <input name="chute" type="text" />
+        <button>Chutar</button>
+      </div>
     </div>
   );
 }
