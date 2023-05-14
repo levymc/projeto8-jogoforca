@@ -80,7 +80,8 @@ export default function App() {
       setErros(0);
       setImagemForca(forca6);
       // alert("Game Over !! ....");
-      setGameOver(true)
+      setGameOver(true);
+      desabilitarTodos();
     } else {
       setImagemForca(imgs[erros + 1]);
     }
