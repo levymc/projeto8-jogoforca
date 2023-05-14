@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 export default function Jogo(props) {
-    let [jogoIniciado, setJogoIniciado] = useState(false)
+    
     
     let funcBtn = () => {
-        if (jogoIniciado === false || props.venceu){
+        if (props.jogoIniciado === false || props.venceu){
             props.funcDisabled();
             props.funcSelecionarTodos();
-            setJogoIniciado(true)
+            props.setJogoIniciado(true)
             if (props.venceu){
                 props.setMsgVenceu(false)
                 props.setPalavraAleatoria(props.embaralhar())
@@ -25,7 +25,7 @@ export default function Jogo(props) {
             <div className="divBtn flex">
                 <button onClick={funcBtn} data-test="choose-word" >Escolher Palavra</button>    
                 <div data-test="word" className="divPalavra flex">
-                    {jogoIniciado && props.underline.map((_, index) => (
+                    {props.jogoIniciado && props.underline.map((_, index) => (
                         <div className="underline" key={index}>
                             {_}
                         </div>

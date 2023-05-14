@@ -1,3 +1,5 @@
+import Chute from "./Chute";
+
 export default function Letras(props) {
   const btnLetra = (letra, index) => {
     props.funcSelecionar(index);
@@ -44,11 +46,9 @@ export default function Letras(props) {
           {letra}
         </button>
       ))}
-      <div className="chute flex">
-        <label for="chute" >Já sei a palavra!</label>
-        <input name="chute" type="text" />
-        <button>Chutar</button>
-      </div>
+        <Chute 
+        jogoIniciado = {props.jogoIniciado}
+        />
     </div>
   );
 }

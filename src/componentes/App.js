@@ -13,10 +13,12 @@ import forca6 from "../img/forca6.png"
 
 export default function App() {
 
+  let [jogoIniciado, setJogoIniciado] = useState(false)
+
   let embaralhar = () => {
     return palavras[Math.floor(Math.random() * palavras.length)]
   }
-
+  
   const [palavraAleatoria, setPalavraAleatoria] = useState(embaralhar);
   const arrayPalavra = palavraAleatoria.split('')
   const [arrayUnderline, setArrayUnderline] = useState(arrayPalavra.map(() => '_'))
@@ -34,8 +36,9 @@ export default function App() {
     disabled: true,
     selecionado: true
   })));
-
   const [venceu, setVenceu] = useState(false)
+
+  const [chute, setChute] = useState(false)
 
   let funcSelecionar = (index) => {
     setEstadosBotoes((prevEstados) => {
@@ -99,7 +102,9 @@ export default function App() {
             venceu = {venceu}
             setMsgVenceu = {setMsgVenceu}
             embaralhar = {embaralhar}
-            />
+            jogoIniciado = {jogoIniciado}
+            setJogoIniciado = {setJogoIniciado}
+             />
             <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
             <h2 className="overVenceu" >{msgVenceu && "Venceu!!!!"}</h2>
       <Letras disabled={botaoDesabilitado} 
@@ -117,6 +122,7 @@ export default function App() {
               setMsgVenceu = {setMsgVenceu}
               setImagemForca = {setImagemForca}
               img0 = {imgs[0]}
+              jogoIniciado = {jogoIniciado}
       />
       
     </div>
