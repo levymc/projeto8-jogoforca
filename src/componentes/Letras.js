@@ -22,6 +22,7 @@ export default function Letras(props) {
 
     if (newArray.indexOf('_') === -1) {
       props.desabilitarTodos();
+      props.setGameOver(false)
       props.setVenceu(true)
       props.setErros(0)
       props.setImagemForca(props.img0)

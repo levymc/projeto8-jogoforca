@@ -108,3 +108,11 @@
     width: 100%;
     justify-content: space-evenly;
 }
+.palavraPerdeu{
+    color: red;
+    font-size: 36px;
+}
+.palavraGanhou{
+    color: green;
+    font-size: 36px;
+}

@@ -74,6 +74,11 @@ export default function App() {
     });
   };
 
+  let mudandoUnderline = () => {
+    setArrayUnderline([])
+    setArrayUnderline(arrayPalavra)
+  }
+
   let errou = () => {
     setErros(erros + 1);
     if (erros === 5) {
@@ -82,6 +87,9 @@ export default function App() {
       // alert("Game Over !! ....");
       setGameOver(true);
       desabilitarTodos();
+      setJogoIniciado(false);
+      mudandoUnderline();
+      console.log(arrayUnderline)
     } else {
       setImagemForca(imgs[erros + 1]);
     }
@@ -105,6 +113,10 @@ export default function App() {
             embaralhar = {embaralhar}
             jogoIniciado = {jogoIniciado}
             setJogoIniciado = {setJogoIniciado}
+            setGameOver = {setGameOver}
+            gameOver = {gameOver}
+            setImagemForca = {setImagemForca}
+            imgs = {imgs}
              />
             <h2 className="over" >{gameOver && "GAME OVER!!!"}</h2>
             <h2 className="overVenceu" >{msgVenceu && "Venceu!!!!"}</h2>
@@ -120,6 +132,7 @@ export default function App() {
               setArrayUnderline={setArrayUnderline} 
               arrayPalavra = {arrayPalavra}
               setVenceu = {setVenceu}
+              setGameOver = {setGameOver}
               setMsgVenceu = {setMsgVenceu}
               setImagemForca = {setImagemForca}
               img0 = {imgs[0]}

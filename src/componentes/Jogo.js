@@ -8,7 +8,9 @@ export default function Jogo(props) {
             props.funcDisabled();
             props.funcSelecionarTodos();
             props.setJogoIniciado(true)
-            if (props.venceu){
+            if (props.venceu || props.gameOver){
+                props.setGameOver(false)
+                props.setImagemForca(props.imgs[0])
                 props.setMsgVenceu(false)
                 props.setPalavraAleatoria(props.embaralhar())
                 const arrayPalavra = props.palavraAleatoria.split('')
@@ -29,7 +31,16 @@ export default function Jogo(props) {
                         <div className="underline" key={index}>
                             {_}
                         </div>
-                    ))}
+                    )) || props.gameOver && props.arrayPalavra.map((letra, index) => (
+                        <div className="palavraPerdeu" key={index}>
+                            {letra}
+                        </div>
+                    )) || props.venceu && props.arrayPalavra.map((letra, index) => (
+                        <div className="palavraGanhou" key={index}>
+                            {letra}
+                        </div>
+                    ))
+                    }
                     </div>
             </div>
         </div>
